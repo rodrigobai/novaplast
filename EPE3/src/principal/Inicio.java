@@ -29,13 +29,18 @@ public class Inicio extends javax.swing.JFrame {
     String NOMBREBD = "novaplast.sqlite";
     String URL = "jdbc:sqlite:"+NOMBREBD;
     VentaNP gbd;
+    
+    
     private String NOMBRE;
+    
+    
     /**
      * Creates new form Inicio
      */
     public Inicio() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/principal/icono.jpg")).getImage());
+        transparenciaBtn();
         this.setLocationRelativeTo(null);
     }
 
@@ -54,9 +59,11 @@ public class Inicio extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         lblContraseña = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
+        btn2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("LOGIN");
         setBackground(new java.awt.Color(0, 153, 153));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -66,37 +73,54 @@ public class Inicio extends javax.swing.JFrame {
                 btnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, 150, 40));
-        getContentPane().add(Jpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 160, 30));
+        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 150, 40));
+        getContentPane().add(Jpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 160, 30));
 
         lblLogin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(0, 0, 255));
         lblLogin.setText("LOGIN");
-        getContentPane().add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 80, 40));
+        getContentPane().add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 80, 40));
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(102, 102, 255));
         lblUsuario.setText("USUARIO");
-        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 120, 30));
+        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, 30));
 
         lblContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblContraseña.setForeground(new java.awt.Color(51, 51, 255));
         lblContraseña.setText("CONTRASEÑA");
-        getContentPane().add(lblContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 140, 30));
+        getContentPane().add(lblContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 140, 30));
 
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 160, 30));
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 160, 30));
+
+        btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/quienes somos.png"))); // NOI18N
+        btn2.setLabel("");
+        btn2.setOpaque(false);
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 430, 210));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/FondoLogin.jpeg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 840, 620));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 10, 840, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
+    
+    public void transparenciaBtn(){
+        btn2.setOpaque(false);
+        btn2.setContentAreaFilled(false);
+        btn2.setBorderPainted(false);
+        
+        
+    }
     
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // TODO add your handling code here:
@@ -137,6 +161,12 @@ public class Inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+        QuienesSomos open = new QuienesSomos();
+        open.setVisible(true);
+    }//GEN-LAST:event_btn2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -174,6 +204,7 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPasswordField Jpass;
+    private javax.swing.JButton btn2;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblContraseña;

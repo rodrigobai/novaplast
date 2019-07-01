@@ -144,7 +144,8 @@ public class Inicio extends javax.swing.JFrame {
              p.setVisible(true);
            }
            else{
-           JOptionPane.showMessageDialog(null, "Usuario y/o Contraseña incorrecta");
+           JOptionPane.showMessageDialog(null, "Su Usuario y/o Contraseña es incorrecta", "Advertencia", 
+                   JOptionPane.WARNING_MESSAGE);
            }
            sentencia.close();
             conexion.close();

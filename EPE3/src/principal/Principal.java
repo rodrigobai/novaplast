@@ -45,9 +45,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProducto = new javax.swing.JTable();
-        BTNVERDATOS = new javax.swing.JButton();
-        BTNVERDATOS1 = new javax.swing.JButton();
-        BTNVERDATOS2 = new javax.swing.JButton();
+        BTNMOSTRAR = new javax.swing.JButton();
+        BTNACTUALIZAR = new javax.swing.JButton();
+        BTNELIMINAR = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -238,24 +238,24 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaProducto);
 
-        BTNVERDATOS.setText("MOSTRAR");
-        BTNVERDATOS.addActionListener(new java.awt.event.ActionListener() {
+        BTNMOSTRAR.setText("MOSTRAR");
+        BTNMOSTRAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNVERDATOSActionPerformed(evt);
+                BTNMOSTRARActionPerformed(evt);
             }
         });
 
-        BTNVERDATOS1.setText("ACTUALIZAR");
-        BTNVERDATOS1.addActionListener(new java.awt.event.ActionListener() {
+        BTNACTUALIZAR.setText("ACTUALIZAR");
+        BTNACTUALIZAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNVERDATOS1ActionPerformed(evt);
+                BTNACTUALIZARActionPerformed(evt);
             }
         });
 
-        BTNVERDATOS2.setText("ELIMINAR");
-        BTNVERDATOS2.addActionListener(new java.awt.event.ActionListener() {
+        BTNELIMINAR.setText("ELIMINAR");
+        BTNELIMINAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNVERDATOS2ActionPerformed(evt);
+                BTNELIMINARActionPerformed(evt);
             }
         });
 
@@ -265,15 +265,15 @@ public class Principal extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addComponent(BTNVERDATOS)
+                .addComponent(BTNMOSTRAR)
                 .addGap(60, 60, 60)
-                .addComponent(BTNVERDATOS1)
+                .addComponent(BTNACTUALIZAR)
                 .addGap(60, 60, 60)
-                .addComponent(BTNVERDATOS2)
+                .addComponent(BTNELIMINAR)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -283,9 +283,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BTNVERDATOS)
-                    .addComponent(BTNVERDATOS1)
-                    .addComponent(BTNVERDATOS2))
+                    .addComponent(BTNMOSTRAR)
+                    .addComponent(BTNACTUALIZAR)
+                    .addComponent(BTNELIMINAR))
                 .addGap(75, 75, 75))
         );
 
@@ -327,7 +327,7 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(72, 72, 72)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNOMBRE, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                            .addComponent(txtNOMBRE, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
                             .addComponent(txtTELEFONO)
                             .addComponent(txtRUT)
                             .addComponent(txtMAIL))
@@ -336,7 +336,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton2)
                         .addGap(66, 66, 66)))
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -406,6 +406,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel14.setText("RUT CLIENTE");
 
         jButton1.setText("IMPRIMIR BOLETA");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -516,21 +521,28 @@ public class Principal extends javax.swing.JFrame {
         txtDesc.setText("");
     }//GEN-LAST:event_btnIngresarActionPerformed
 
-    private void BTNVERDATOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNVERDATOSActionPerformed
-        
+    private void BTNMOSTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNMOSTRARActionPerformed
+     //Boton Mostrar
+     
     gbd.mostrarDatos(tablaProducto);
                 
         
         
-    }//GEN-LAST:event_BTNVERDATOSActionPerformed
+    }//GEN-LAST:event_BTNMOSTRARActionPerformed
 
-    private void BTNVERDATOS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNVERDATOS1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BTNVERDATOS1ActionPerformed
+    private void BTNACTUALIZARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNACTUALIZARActionPerformed
+        // Boton Actualizar
+     
 
-    private void BTNVERDATOS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNVERDATOS2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BTNVERDATOS2ActionPerformed
+        
+    }//GEN-LAST:event_BTNACTUALIZARActionPerformed
+
+    private void BTNELIMINARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNELIMINARActionPerformed
+        // Boton Eliminar
+        gbd.eliminarDatos(tablaProducto);
+        //int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        
+    }//GEN-LAST:event_BTNELIMINARActionPerformed
 
     private void txtPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioActionPerformed
         // TODO add your handling code here:
@@ -558,6 +570,12 @@ public class Principal extends javax.swing.JFrame {
         txtTELEFONO.setText("");
         txtMAIL.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Boton Imprimir Boleta
+        Boleta open = new Boleta();
+        open.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -603,9 +621,9 @@ public class Principal extends javax.swing.JFrame {
     
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BTNVERDATOS;
-    private javax.swing.JButton BTNVERDATOS1;
-    private javax.swing.JButton BTNVERDATOS2;
+    private javax.swing.JButton BTNACTUALIZAR;
+    private javax.swing.JButton BTNELIMINAR;
+    private javax.swing.JButton BTNMOSTRAR;
     private javax.swing.JButton btnIngresar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;

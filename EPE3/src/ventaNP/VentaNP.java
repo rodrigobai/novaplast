@@ -18,6 +18,7 @@ public class VentaNP {
     String DRIVER = "org.sqlite.JDBC";
     String NOMBREBD = "novaplast.sqlite";
     String URL = "jdbc:sqlite:"+NOMBREBD;
+    private Object tablaProdcto;
     
     public void crearBD(){
         
@@ -155,6 +156,33 @@ public class VentaNP {
       
         
     }
+    public void actualizarDatosProductos(int id, String nombre, int precio, String descripcion){
+        
+       try{
+            Class.forName(DRIVER);
+            conexion = DriverManager.getConnection(URL);
+            sentencia = conexion.createStatement();
+            String SQL = "UPDATE PRODUCTOS " +
+                    "(ID, NOMBRE, PRECIO, DESCRIPCION) VALUES " +
+                    "('"+id+"','"+nombre+"','"+precio+"','"+descripcion+"')";
+            sentencia.executeUpdate(SQL);
+            JOptionPane.showMessageDialog(null, "DATOS INGRESADOS!!",
+                    "EXITO!!", JOptionPane.INFORMATION_MESSAGE);
+            sentencia.close();
+            conexion.close();
+            
+        }catch(ClassNotFoundException | SQLException e){
+            
+            JOptionPane.showMessageDialog(null, "Error: " + e,
+                    "Error!!", JOptionPane.ERROR_MESSAGE);
+        } 
+        
+      
+        
+    }
+    
+    
+    
     public void insertarDatosCliente(int RUT, String NOMBRE, int TELEFONO, String MAIL){
         
        try{
@@ -231,7 +259,33 @@ public class VentaNP {
         } 
          
 }
-  
+    
+    public void eliminarDatos(JTable tablaProducto){
+        int filaSeleccionada = tablaProducto.getSelectedRow();
+        
+        try{
+            Class.forName(DRIVER);
+            conexion = DriverManager.getConnection(URL);
+            sentencia = conexion.createStatement();
+            String SQL = "DELETE FROM PRODUCTOS WHERE ";
+            resultados = sentencia.executeQuery(SQL);
+            
+            if(filaSeleccionada>=0){
+                
+            }
+            
+            
+            resultados.close();
+            sentencia.close();
+            conexion.close();
+            
+        }catch(ClassNotFoundException | SQLException e){
+            
+            JOptionPane.showMessageDialog(null, "Error: " + e,
+                    "Error!!", JOptionPane.ERROR_MESSAGE);
+        } 
+         
+}
    
 //    String usuario = Inicio.txtUsuario.getText();
 //    String clave = String.valueOf(Inicio.jpass.getPassword());

@@ -269,16 +269,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="582" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="588" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                      <Component id="BTNVERDATOS" min="-2" max="-2" attributes="0"/>
+                      <Component id="BTNMOSTRAR" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="BTNVERDATOS1" min="-2" max="-2" attributes="0"/>
+                      <Component id="BTNACTUALIZAR" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="BTNVERDATOS2" min="-2" max="-2" attributes="0"/>
+                      <Component id="BTNELIMINAR" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -290,9 +290,9 @@
                       <Component id="jScrollPane1" min="-2" pref="343" max="-2" attributes="0"/>
                       <EmptySpace pref="61" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BTNVERDATOS" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="BTNVERDATOS1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="BTNVERDATOS2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BTNMOSTRAR" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BTNACTUALIZAR" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BTNELIMINAR" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
@@ -348,28 +348,28 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="BTNVERDATOS">
+            <Component class="javax.swing.JButton" name="BTNMOSTRAR">
               <Properties>
                 <Property name="text" type="java.lang.String" value="MOSTRAR"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNVERDATOSActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNMOSTRARActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="BTNVERDATOS1">
+            <Component class="javax.swing.JButton" name="BTNACTUALIZAR">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ACTUALIZAR"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNVERDATOS1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNACTUALIZARActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="BTNVERDATOS2">
+            <Component class="javax.swing.JButton" name="BTNELIMINAR">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ELIMINAR"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNVERDATOS2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNELIMINARActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -410,7 +410,7 @@
                               </Group>
                               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtNOMBRE" alignment="0" pref="195" max="32767" attributes="0"/>
+                                  <Component id="txtNOMBRE" alignment="0" pref="198" max="32767" attributes="0"/>
                                   <Component id="txtTELEFONO" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtRUT" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtMAIL" alignment="0" max="32767" attributes="0"/>
@@ -423,7 +423,7 @@
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jLabel6" pref="189" max="32767" attributes="0"/>
+                      <Component id="jLabel6" pref="192" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -706,6 +706,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="IMPRIMIR BOLETA"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

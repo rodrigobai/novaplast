@@ -6,7 +6,7 @@
 package principal;
 
 import javax.swing.ImageIcon;
-
+// estoy modificandooo 
 /**
  *
  * @author Rodrigo Contreras

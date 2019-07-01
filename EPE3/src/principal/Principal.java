@@ -1,12 +1,16 @@
 
 
 package principal;
+import java.sql.DriverManager;
 import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import ventaNP.VentaNP;
 import principal.Inicio;
 import principal.Splash;
 import principal.Splash.ScreenSplash;
+import java.sql.*;
+
 
 public class Principal extends javax.swing.JFrame {
 
@@ -539,9 +543,30 @@ public class Principal extends javax.swing.JFrame {
 
     private void BTNELIMINARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNELIMINARActionPerformed
         // Boton Eliminar
-        gbd.eliminarDatos(tablaProducto);
+        gbd.eliminarDatos();
         //int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro?", "Alerta!", JOptionPane.YES_NO_OPTION);
         
+          
+//        try{
+//    int filaSeleccionada = tablaProducto.getSelectedRow();
+//      Class.forName(DRIVER);
+//            conexion = DriverManager.getConnection(URL);
+//            sentencia = conexion.createStatement();
+//            String SQL = "DELETE FROM PRODUCTOS ";
+//            resultados = sentencia.executeQuery(SQL);
+//            
+//    String SQL = "DELETE FROM PRODUCTOS ";
+//    
+//    int n=sent.executeUpdate(sql);
+//    if(n>0){
+//        JOptionPane.showMessageDialog(null, "datos eliminados");
+//        
+//    }
+//}catch(Exception e){
+//    JOptionPane.showMessageDialog(null, "error"+e.getMessage());
+//}
+//        
+//        
     }//GEN-LAST:event_BTNELIMINARActionPerformed
 
     private void txtPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioActionPerformed

@@ -4,6 +4,7 @@ package ventaNP;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import principal.Principal;
 
 /**
  *
@@ -260,31 +261,50 @@ public class VentaNP {
          
 }
     
-    public void eliminarDatos(JTable tablaProducto){
-        int filaSeleccionada = tablaProducto.getSelectedRow();
+    public void eliminarDatos(){
         
         try{
-            Class.forName(DRIVER);
+      Class.forName(DRIVER);
             conexion = DriverManager.getConnection(URL);
             sentencia = conexion.createStatement();
-            String SQL = "DELETE FROM PRODUCTOS WHERE ";
+            String SQL = "DELETE FROM PRODUCTOS";
             resultados = sentencia.executeQuery(SQL);
-            
-            if(filaSeleccionada>=0){
-                
-            }
-            
-            
-            resultados.close();
-            sentencia.close();
-            conexion.close();
-            
-        }catch(ClassNotFoundException | SQLException e){
-            
-            JOptionPane.showMessageDialog(null, "Error: " + e,
-                    "Error!!", JOptionPane.ERROR_MESSAGE);
-        } 
-         
+
+    int n=sentencia.executeUpdate(SQL);
+    if(n>0){
+        
+        JOptionPane.showMessageDialog(null, "datos eliminados");
+        
+    }
+}catch(Exception e){
+    JOptionPane.showMessageDialog(null, "error"+e.getMessage());
+}
+        
+        
+//        
+//        try{
+//            Class.forName(DRIVER);
+//            conexion = DriverManager.getConnection(URL);
+//            sentencia = conexion.createStatement();
+//            String SQL = "DELETE FROM PRODUCTOS ";
+//            resultados = sentencia.executeQuery(SQL);
+//            
+//         
+//            if(filaSeleccionada>=0){
+//
+//                PreparedStatement pst= conexion.prepareStatement("DELETE FROM PRODUCTOS ");
+//               int n=pst.executeUpdate();
+//               
+//            }
+//            resultados.close();
+//            sentencia.close();
+//            conexion.close();
+//            
+//        }catch(ClassNotFoundException | SQLException e){
+//            
+//            JOptionPane.showMessageDialog(null, "Error: " + e,
+//                    "Error!!", JOptionPane.ERROR_MESSAGE);
+//        } 
 }
    
 //    String usuario = Inicio.txtUsuario.getText();

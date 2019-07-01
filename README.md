@@ -1,1 +1,1 @@
-#:bowtie: `:bowtie:` novaplast
+:bowtie: novaplast

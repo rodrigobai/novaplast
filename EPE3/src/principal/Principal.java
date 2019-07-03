@@ -543,7 +543,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void BTNELIMINARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNELIMINARActionPerformed
         // Boton Eliminar
-        gbd.eliminarDatos();
+        gbd.eliminarDatos(tablaProducto);
         //int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro?", "Alerta!", JOptionPane.YES_NO_OPTION);
         
           

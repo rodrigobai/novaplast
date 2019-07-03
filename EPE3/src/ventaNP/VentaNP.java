@@ -261,16 +261,16 @@ public class VentaNP {
          
 }
     
-    public void eliminarDatos(){
+    public void eliminarDatos(JTable tablaProducto){
         
-        int filaSeleccionada = ;
+        int filaSeleccionada = tablaProducto.getSelectedRow();
         
            try{
             Class.forName(DRIVER);
             conexion = DriverManager.getConnection(URL);
             
             sentencia = conexion.createStatement();
-            String SQL = "DELETE FROM PRODUCTOS";
+            String SQL = "DELETE FROM PRODUCTOS"+"";
             sentencia.executeUpdate(SQL);
             JOptionPane.showMessageDialog(null, "Registro Eliminado!!",
                     "EXITO!!", JOptionPane.INFORMATION_MESSAGE);

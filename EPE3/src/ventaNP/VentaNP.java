@@ -263,22 +263,24 @@ public class VentaNP {
     
     public void eliminarDatos(){
         
-        try{
-      Class.forName(DRIVER);
+        
+           try{
+            Class.forName(DRIVER);
             conexion = DriverManager.getConnection(URL);
+            
             sentencia = conexion.createStatement();
             String SQL = "DELETE FROM PRODUCTOS";
-            resultados = sentencia.executeQuery(SQL);
-
-    int n=sentencia.executeUpdate(SQL);
-    if(n>0){
-        
-        JOptionPane.showMessageDialog(null, "datos eliminados");
-        
-    }
-}catch(Exception e){
-    JOptionPane.showMessageDialog(null, "error"+e.getMessage());
-}
+            sentencia.executeUpdate(SQL);
+            JOptionPane.showMessageDialog(null, "Registro Eliminado!!",
+                    "EXITO!!", JOptionPane.INFORMATION_MESSAGE);
+            sentencia.close();
+            conexion.close();
+            
+        }catch(ClassNotFoundException | SQLException e){
+            
+            JOptionPane.showMessageDialog(null, "Error: " + e,
+                    "Error!!", JOptionPane.ERROR_MESSAGE);
+        }
         
         
 //        

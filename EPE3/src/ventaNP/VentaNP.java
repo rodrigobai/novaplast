@@ -268,6 +268,17 @@ public class VentaNP {
            try{
             Class.forName(DRIVER);
             conexion = DriverManager.getConnection(URL);
+<<<<<<< HEAD
+            sentencia = conexion.createStatement();
+            String SQL = "DELETE FROM PRODUCTOS WHERE '"+filaSeleccionada+"'";
+            resultados = sentencia.executeQuery(SQL);
+            
+            if(filaSeleccionada>=0){
+                
+            }
+            
+=======
+>>>>>>> 71d7bc761b4d9e99998ac5b5def7820e4a961a4d
             
             sentencia = conexion.createStatement();
             String SQL = "DELETE FROM PRODUCTOS"+"";

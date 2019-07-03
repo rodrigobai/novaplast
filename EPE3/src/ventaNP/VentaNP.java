@@ -2,6 +2,7 @@
 package ventaNP;
 
 import java.sql.*;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import principal.Principal;
@@ -255,29 +256,31 @@ public class VentaNP {
         
     }
     
-//    public void insertarDatos(int id, String nombre, int precio, String descripcion){
-//        
-//       try{
-//            Class.forName(DRIVER);
-//            conexion = DriverManager.getConnection(URL);
-//            sentencia = conexion.createStatement();
-//            String SQL = "INSERT INTO PRODUCTOS " +
-//                    "(ID, NOMBRE, PRECIO, DESCRIPCION) VALUES " +
-//                    "('"+id+"','"+nombre+"','"+precio+"','"+descripcion+"')";
-//            sentencia.executeUpdate(SQL);
-//            JOptionPane.showMessageDialog(null, "DATOS INGRESADOS!!",
-//                    "EXITO!!", JOptionPane.INFORMATION_MESSAGE);
-//            sentencia.close();
-//            conexion.close();
-//            
-//        }catch(ClassNotFoundException | SQLException e){
-//            
-//            JOptionPane.showMessageDialog(null, "Error: " + e,
-//                    "Error!!", JOptionPane.ERROR_MESSAGE);
-//        } 
-//        
-//        
-//    }
+    public void cargarCMB(JComboBox cmbProd){
+        try{
+        
+        Class.forName(DRIVER);
+            conexion = DriverManager.getConnection(URL);
+            sentencia = conexion.createStatement();
+            String SQL = "SELECT * FROM PRODUCTOS";
+            resultados = sentencia.executeQuery(SQL);
+            int fila = 1;
+            cmbProd.removeAllItems();
+            while(resultados.next()){
+                
+                cmbProd.addItem(resultados.getString("NOMBRE"));
+                fila++;
+            }
+            resultados.close();
+            sentencia.close();
+            conexion.close();
+            
+        }catch(ClassNotFoundException | SQLException e){
+            
+            JOptionPane.showMessageDialog(null, "Error: " + e,
+                    "Error!!", JOptionPane.ERROR_MESSAGE);
+        } 
+    }
     
     
     public void mostrarDatos(JTable tablaProducto){
@@ -316,10 +319,10 @@ public class VentaNP {
             Class.forName(DRIVER);
             conexion = DriverManager.getConnection(URL);
             sentencia = conexion.createStatement();
-            String SQL = "DELETE FROM PRODUCTOS WHERE '"+filaSeleccionada+"'";
+            String SQL = "DELETE FROM PRODUCTOS";
             resultados = sentencia.executeQuery(SQL);
             
-            if(filaSeleccionada>=0){
+            if(filaSeleccionada>=1){
                 
             }
             
@@ -329,6 +332,7 @@ public class VentaNP {
                     "EXITO!!", JOptionPane.INFORMATION_MESSAGE);
             sentencia.close();
             conexion.close();
+            resultados.close();
             
         }catch(ClassNotFoundException | SQLException e){
             

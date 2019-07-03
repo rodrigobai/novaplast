@@ -64,7 +64,7 @@ public class Principal extends javax.swing.JFrame {
         txtMAIL = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbProd = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
@@ -381,7 +381,12 @@ public class Principal extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(204, 255, 204));
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbProdActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("PRODUCTO");
 
@@ -450,7 +455,7 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jLabel12))
                                 .addGap(104, 104, 104)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox1, 0, 176, Short.MAX_VALUE)
+                                    .addComponent(cmbProd, 0, 176, Short.MAX_VALUE)
                                     .addComponent(jTextField5))))
                         .addGap(169, 169, 169))))
             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -463,7 +468,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -529,14 +534,14 @@ public class Principal extends javax.swing.JFrame {
      //Boton Mostrar
      
     gbd.mostrarDatos(tablaProducto);
-                
+    gbd.cargarCMB(cmbProd);
         
         
     }//GEN-LAST:event_BTNMOSTRARActionPerformed
 
     private void BTNACTUALIZARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNACTUALIZARActionPerformed
         // Boton Actualizar
-     
+    
 
         
     }//GEN-LAST:event_BTNACTUALIZARActionPerformed
@@ -602,6 +607,10 @@ public class Principal extends javax.swing.JFrame {
         open.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void cmbProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbProdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbProdActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -652,9 +661,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnIngresar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<String> cmbProd;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

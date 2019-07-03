@@ -263,6 +263,7 @@ public class VentaNP {
     
     public void eliminarDatos(){
         
+        int filaSeleccionada = ;
         
            try{
             Class.forName(DRIVER);
